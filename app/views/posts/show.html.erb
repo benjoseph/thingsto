@@ -1,0 +1,13 @@
+
+
+<h3><%= @post.title %></h3>
+
+Posted by: <b><%= @post.user_id %></b> <br>
+
+<%= @post.content %><br><br>
+<% if current_user %>
+<% if current_user.uid=@post.user_id %>
+<%= link_to 'Edit', edit_post_path(@post) %> | 
+<% end %>
+<% end %>
+<%= link_to 'Back', posts_path %>
